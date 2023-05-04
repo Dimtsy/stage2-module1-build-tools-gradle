@@ -6,12 +6,15 @@ import java.util.List;
 
 public class Utils {
     public static boolean isAllPositiveNumbers(List<String> args) {
-        for (String s: args) {
-            if(!StringUtils.isPositiveNumber(s)){
-                return false;
+        try {
+            for (String s : args) {
+                if (!StringUtils.isPositiveNumber(s)) {
+                    return false;
+                }
             }
+        } catch (NullPointerException e) {
+            return false;
         }
         return true;
-        //magic happens here
     }
 }
